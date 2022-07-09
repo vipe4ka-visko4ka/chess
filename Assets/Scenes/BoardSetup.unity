@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441847162}
   - component: {fileID: 1441847163}
+  - component: {fileID: 1441847164}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -166,9 +167,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae328fbb39fd461c83262d222cde314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squarePrefab: {fileID: 3187433507290602364, guid: 9f980e3a3dac34940b53afe27cd76525, type: 3}
+  squarePrefab: {fileID: 8448178848141702504, guid: 9f980e3a3dac34940b53afe27cd76525, type: 3}
   blackSquareColor: {r: 0, g: 0, b: 0, a: 0}
   whiteSquareColor: {r: 1, g: 1, b: 1, a: 0}
+--- !u!114 &1441847164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441847161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfe88aa3f4ee48a7a6b2c7a012274fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _squareSelectorPrefab: {fileID: 7455451826045659026, guid: 6179bdaf5f15841a4a4fd8fb217993e1, type: 3}
 --- !u!1 &1576505369
 GameObject:
   m_ObjectHideFlags: 0

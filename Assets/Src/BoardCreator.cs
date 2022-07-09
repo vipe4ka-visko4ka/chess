@@ -23,8 +23,8 @@ public class BoardCreator : MonoBehaviour
         GameObject squareParent = new GameObject("Squares");
         for (int row = 0; row < BOARD_SIZE; row++) {
             for (int coll = 0; coll < BOARD_SIZE; coll++) {
-                GameObject square = Instantiate(squarePrefab, new Vector3(row + 0.5f, 0, coll + 0.5f), Quaternion.identity, squareParent.transform);
-                square.GetComponent<Renderer>().material.color = row % 2 == coll % 2 ? blackSquareColor : whiteSquareColor;
+                GameObject square = Instantiate(squarePrefab, new Vector3(row, 0, coll), Quaternion.identity, squareParent.transform);
+                square.GetComponentInChildren<Renderer>().material.color = row % 2 == coll % 2 ? blackSquareColor : whiteSquareColor;
             }
         }
     }
