@@ -9,6 +9,9 @@ public class Program : MonoBehaviour
     private void Start()
     {
         MakeBoardUI();
+        MakePieces();
+        // Piece pawn = new PieceCreator().CreatePiece(PieceType.Pawn, Team.White, new Vector2Int(1, 1));
+        // pawn.Select();
     }
 
     private void MakeBoardUI()
@@ -20,5 +23,16 @@ public class Program : MonoBehaviour
                 square.GetComponentInChildren<Renderer>().material.color = row % 2 == coll % 2 ? Color.black : Color.white;
             }
         }
+    }
+
+    private void MakePieces()
+    {
+        PieceCreator pieceCreator = new PieceCreator();
+
+        for (int i = 0; i < 8; i++)
+            pieceCreator.CreatePiece(PieceType.Pawn, Team.White, new Vector2Int(i, 1));
+
+        for (int i = 0; i < 8; i++)
+            pieceCreator.CreatePiece(PieceType.Pawn, Team.Black, new Vector2Int(i, 6));
     }
 }
