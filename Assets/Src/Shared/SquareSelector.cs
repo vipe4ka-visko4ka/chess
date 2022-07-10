@@ -50,7 +50,7 @@ namespace Shared
 
         private bool IsMousePositionOnBoard(Vector3 mousePosition)
         {
-            return mousePosition.x >= 0 && mousePosition.z >= 0 && mousePosition.x < Constants.BOARD_SIZE && mousePosition.z < Constants.BOARD_SIZE;
+            return mousePosition.x >= 0 && mousePosition.z >= 0 && mousePosition.x < 8 && mousePosition.z < 8;
         }
     }
 }

@@ -5,11 +5,12 @@ using Shared.Model;
 
 namespace Shared
 {
-    public class PieceCreator : MonoBehaviour
+    public class PieceCreator
     {
         private Dictionary<string, GameObject> _piecesPrefabsDictionary = new Dictionary<string, GameObject>();
+        private List<PieceInfo> pieces = new List<PieceInfo>();
 
-        private void Awake()
+        public PieceCreator()
         {
             GetPiecesPrefabs();
         }
@@ -17,7 +18,8 @@ namespace Shared
         public void InitializePiece(PieceType pieceType, Team team, Vector2Int position)
         {
             GameObject piecePrefab = _piecesPrefabsDictionary[pieceType.ToString()];
-            GameObject pieceObject = Instantiate(piecePrefab, new Vector3(position.x, 0, position.y), Quaternion.identity);
+            GameObject pieceObject = GameObject.Instantiate(piecePrefab, new Vector3(position.x, 0, position.y), Quaternion.identity);
+            pieces.Add(new PieceInfo(pieceType, team, position));
         }
 
         private void GetPiecesPrefabs()

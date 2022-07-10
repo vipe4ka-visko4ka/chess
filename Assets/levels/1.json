@@ -1,0 +1,28 @@
+{
+    "Items": [
+        {
+            "PieceType": 1,
+            "Team": 0,
+            "Position": {
+                "x": 4,
+                "y": 3
+            }
+        },
+        {
+            "PieceType": 3,
+            "Team": 0,
+            "Position": {
+                "x": 6,
+                "y": 1
+            }
+        },
+        {
+            "PieceType": 5,
+            "Team": 0,
+            "Position": {
+                "x": 1,
+                "y": 6
+            }
+        }
+    ]
+}
