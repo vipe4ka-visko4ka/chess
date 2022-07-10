@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Piece : MonoBehaviour
@@ -11,10 +12,11 @@ public abstract class Piece : MonoBehaviour
       SetColorBaseOnTeam();
     }
   }
-
-  public void Move()
-  {
-
+  public Vector2Int position { 
+    get
+    {
+      return new Vector2Int((int)transform.position.x, (int)transform.position.z);
+    }
   }
 
   public void Select()
@@ -26,6 +28,8 @@ public abstract class Piece : MonoBehaviour
   {
     SetColorBaseOnTeam();
   }
+
+  public abstract List<Vector2Int> GetMoves();
 
   private void SetColorBaseOnTeam()
   {
