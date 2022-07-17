@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoardController : MonoBehaviour
@@ -20,7 +19,8 @@ public class BoardController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _squareSelector.SelectedSquarePosition.HasValue)
         {
             Piece piece = _board.GetPiece(_squareSelector.SelectedSquarePosition.Value);
-            SelectPiece(piece);
+            if (piece)
+                SelectPiece(piece);
         }
     }
 
