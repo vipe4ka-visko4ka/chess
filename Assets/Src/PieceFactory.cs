@@ -5,7 +5,7 @@ using UnityEngine;
 public class PieceFactory
 {
     private readonly Dictionary<string, GameObject> _piecesPrefabs = new Dictionary<string, GameObject>();
-    private readonly GameObject parent = new GameObject("Pieces");
+    private readonly GameObject _parent = new GameObject("Pieces");
 
     public PieceFactory()
     {
@@ -16,7 +16,7 @@ public class PieceFactory
     {
         GameObject piecePrefab = _piecesPrefabs[pieceInfo.PieceType.ToString()];
         Piece piece = GameObject
-            .Instantiate(piecePrefab, new Vector3(pieceInfo.Position.x, 0, pieceInfo.Position.y), Quaternion.identity, parent.transform)
+            .Instantiate(piecePrefab, new Vector3(pieceInfo.Position.x, 0, pieceInfo.Position.y), Quaternion.identity, _parent.transform)
             .GetComponent<Piece>();
         piece.Team = pieceInfo.Team;
         return piece;
