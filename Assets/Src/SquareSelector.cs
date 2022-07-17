@@ -6,7 +6,7 @@ public class SquareSelector : MonoBehaviour
     private GameObject _squareSelectorPrefab;
     private GameObject _squareSelectorObject;
 
-    public Vector2Int? selectedSquareIndex => 
+    public Vector2Int? SelectedSquarePosition => 
         _squareSelectorObject != null 
             ? new Vector2Int(
                 (int)_squareSelectorObject.transform.position.x,

@@ -7,6 +7,11 @@ public class Board : MonoBehaviour
     private PieceFactory _pieceFactory;
     private Piece[,] _grid = new Piece[8, 8];
 
+    public Piece GetPiece(Vector2Int position)
+    {
+        return _grid[position.x, position.y];
+    }
+
     private void Awake()
     {
         _pieceFactory = new PieceFactory();

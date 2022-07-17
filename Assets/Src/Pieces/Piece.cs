@@ -18,9 +18,24 @@ public abstract class Piece : MonoBehaviour
     }
   }
 
+  public void Select()
+  {
+    SetColor(Color.yellow);
+  }
+
+  public void Deselect()
+  {
+    SetColorBaseOnTeam();
+  }
+
   private void SetColorBaseOnTeam()
   {
-    Color pieceColor = _team == Team.White ? Color.white : Color.black;
-    GetComponentInChildren<MeshRenderer>().material.color = pieceColor;
+    Color color = _team == Team.White ? Color.white : Color.black;
+    SetColor(color);
+  }
+
+  private void SetColor(Color color)
+  {
+    GetComponentInChildren<MeshRenderer>().material.color = color;
   }
 }
