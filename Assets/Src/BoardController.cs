@@ -33,7 +33,7 @@ public class BoardController : MonoBehaviour
         }
 
         piece.Select();
-        _moveSelector.SelectMoves(new List<Vector2Int>(){ new Vector2Int(piece.position.x, piece.position.y + 1) });
+        _moveSelector.SelectMoves(piece.GetMoves());
         _selectedPiece = piece;
     }
 }

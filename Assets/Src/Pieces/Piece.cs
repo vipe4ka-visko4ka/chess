@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Piece : MonoBehaviour
@@ -17,6 +18,8 @@ public abstract class Piece : MonoBehaviour
       return new Vector2Int((int)transform.position.x, (int)transform.position.z);
     }
   }
+
+  public abstract List<Vector2Int> GetMoves();
 
   public void Select()
   {
