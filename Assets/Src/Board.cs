@@ -12,6 +12,13 @@ public class Board : MonoBehaviour
         return _grid[position.x, position.y];
     }
 
+    public void MovePiece(Piece piece, Vector2Int position)
+    {
+        _grid[piece.position.x, piece.position.y] = null;
+        piece.Move(position);
+        _grid[position.x, position.y] = piece;
+    }
+
     private void Awake()
     {
         _pieceFactory = new PieceFactory();

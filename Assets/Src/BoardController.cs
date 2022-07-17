@@ -18,9 +18,12 @@ public class BoardController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && _squareSelector.SelectedSquarePosition.HasValue)
         {
-            Piece piece = _board.GetPiece(_squareSelector.SelectedSquarePosition.Value);
+            Vector2Int position = _squareSelector.SelectedSquarePosition.Value;
+            Piece piece = _board.GetPiece(position);
             if (piece)
                 SelectPiece(piece);
+            if (_selectedPiece != null && piece == null && _selectedPiece.IsCanMove(position))
+                MovePiece(position);
         }
     }
 
@@ -35,5 +38,13 @@ public class BoardController : MonoBehaviour
         piece.Select();
         _moveSelector.SelectMoves(piece.GetMoves());
         _selectedPiece = piece;
+    }
+
+    private void MovePiece(Vector2Int position)
+    {
+        _selectedPiece.Deselect();
+        _moveSelector.DeselectMoves();
+        _board.MovePiece(_selectedPiece, position);
+        _selectedPiece = null;
     }
 }

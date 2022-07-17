@@ -21,6 +21,17 @@ public abstract class Piece : MonoBehaviour
 
   public abstract List<Vector2Int> GetMoves();
 
+  public bool IsCanMove(Vector2Int position)
+  {
+    List<Vector2Int> availableMoves = GetMoves();
+    return availableMoves.Contains(position);
+  }
+
+  public void Move(Vector2Int position)
+  {
+    transform.position = new Vector3(position.x, 0, position.y);
+  }
+
   public void Select()
   {
     SetColor(Color.yellow);
