@@ -21,6 +21,16 @@ public abstract class Piece : MonoBehaviour
 
   public abstract List<Vector2Int> GetMoves();
 
+  public bool IsOpposite(Piece piece)
+  {
+    return Team != piece.Team;
+  }
+
+  public bool IsOpposite(Team team)
+  {
+    return Team != team;
+  }
+
   public bool IsCanMove(Vector2Int position)
   {
     List<Vector2Int> availableMoves = GetMoves();
